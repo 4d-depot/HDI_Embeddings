@@ -1,0 +1,13 @@
+{
+	"providers": {
+		"Provider": {
+			"baseURL": "http://localhost:11434/v1/"
+		}
+	},
+	"models": {
+		"Embed": {
+			"provider": "Provider",
+			"model": "embeddinggemma:latest"
+		}
+	}
+}

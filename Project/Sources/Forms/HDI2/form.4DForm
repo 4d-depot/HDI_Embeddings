@@ -1,0 +1,739 @@
+{
+	"destination": "detailScreen",
+	"windowMinWidth": 980,
+	"windowMaxWidth": 32000,
+	"windowMinHeight": 640,
+	"windowMaxHeight": 32000,
+	"width": 1200,
+	"height": 800,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onCloseBox",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 1160,
+					"height": 720,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "objTabs",
+					"dataSourceTypeHint": "object",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"BtnOK": {
+					"type": "button",
+					"top": 760,
+					"left": 1078,
+					"width": 102,
+					"height": 24,
+					"sizingX": "move",
+					"sizingY": "move",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/OK"
+					},
+					"shortcutKey": "[Enter]",
+					"text": "OK",
+					"class": "Buttons_13",
+					"defaultButton": true,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/BtnOK.4dm"
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "Trace",
+					"top": 755,
+					"left": 23,
+					"width": 175,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.trace"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 100,
+					"left": 60,
+					"width": 1070,
+					"height": 610,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[0].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"Text": {
+					"type": "text",
+					"text": "Sorry, this “How do I” (HDI) example demonstrates an embedding feature.\rYou must have the 4D Embedding Studio and 4D AIKit components to use this demo.",
+					"top": 406,
+					"left": 20,
+					"width": 1160,
+					"height": 142,
+					"stroke": "#ff0000",
+					"borderRadius": 5,
+					"verticalAlign": "middle",
+					"textAlign": "center",
+					"fontSize": 24,
+					"visibility": "hidden"
+				}
+			}
+		},
+		{
+			"objects": {
+				"textInfo_configure": {
+					"type": "input",
+					"top": 70,
+					"left": 60,
+					"width": 1079,
+					"height": 164,
+					"sizingX": "grow",
+					"dataSource": "Infos[1].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"BtnOpenSettings": {
+					"type": "button",
+					"top": 244,
+					"left": 509,
+					"width": 180,
+					"height": 28,
+					"text": "Open AI Settings",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/BtnOpenSettings.4dm"
+				},
+				"Static Picture1": {
+					"type": "picture",
+					"top": 325,
+					"left": 639,
+					"width": 500,
+					"height": 429,
+					"picture": "/RESOURCES/Images/modelAlias.png",
+					"pictureFormat": "scaled"
+				},
+				"Static Picture2": {
+					"type": "picture",
+					"top": 325,
+					"left": 60,
+					"width": 500,
+					"height": 429,
+					"picture": "/RESOURCES/Images/provider.png",
+					"pictureFormat": "scaled"
+				}
+			}
+		},
+		{
+			"objects": {
+				"textInfo_generate": {
+					"type": "input",
+					"top": 70,
+					"left": 60,
+					"width": 516,
+					"height": 110,
+					"sizingX": "grow",
+					"dataSource": "Infos[2].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"textInfo_generate1": {
+					"type": "input",
+					"top": 70,
+					"left": 625,
+					"width": 532,
+					"height": 110,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.configText2",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"Static Picture5": {
+					"type": "picture",
+					"top": 200,
+					"left": 600,
+					"width": 600,
+					"height": 470,
+					"picture": "/RESOURCES/Images/studio.png",
+					"pictureFormat": "scaled"
+				},
+				"Line": {
+					"type": "line",
+					"top": 60,
+					"left": 600,
+					"width": 1,
+					"height": 661,
+					"startPoint": "bottomLeft",
+					"visibility": "hidden"
+				},
+				"Static Picture6": {
+					"type": "picture",
+					"top": 170,
+					"left": 141,
+					"width": 297,
+					"height": 537,
+					"picture": "/RESOURCES/Images/table.png",
+					"pictureFormat": "scaled"
+				}
+			}
+		},
+		{
+			"objects": {
+				"textInfo_search": {
+					"type": "input",
+					"top": 70,
+					"left": 60,
+					"width": 1080,
+					"height": 290,
+					"sizingX": "grow",
+					"dataSource": "Infos[3].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"BtnGenerate": {
+					"type": "button",
+					"top": 297,
+					"left": 273,
+					"width": 180,
+					"height": 28,
+					"text": "Generate invalid vectors",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/BtnGenerate.4dm"
+				},
+				"LabelGenResults": {
+					"type": "text",
+					"top": 353,
+					"left": 60,
+					"width": 488,
+					"height": 16,
+					"sizingX": "grow",
+					"text": "Results:",
+					"fontWeight": "bold"
+				},
+				"TxtGenResults": {
+					"type": "input",
+					"top": 371,
+					"left": 62,
+					"width": 486,
+					"height": 177,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.generateResults",
+					"enterable": false,
+					"multiline": "yes",
+					"borderStyle": "system",
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic"
+				},
+				"BtnGenerateAll": {
+					"type": "button",
+					"top": 297,
+					"left": 60,
+					"width": 180,
+					"height": 28,
+					"text": "Generate all vectors",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/BtnGenerateAll.4dm"
+				}
+			}
+		},
+		{
+			"objects": {
+				"textInfo_search2": {
+					"type": "input",
+					"top": 70,
+					"left": 60,
+					"width": 1080,
+					"height": 218,
+					"sizingX": "grow",
+					"dataSource": "Infos[4].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"listboxUpdateRecord": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.allStudents",
+					"top": 298,
+					"left": 65,
+					"width": 550,
+					"height": 408,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "grow",
+					"headerHeight": "2em",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"rowHeight": "2em",
+					"verticalAlign": "middle",
+					"currentItemSource": "Form:C1466.currentStudent",
+					"hideFocusRing": true,
+					"metaSource": "Decorate",
+					"events": [],
+					"columns": [
+						{
+							"name": "ID1",
+							"dataSource": "This:C1470.ID",
+							"width": 60,
+							"enterable": false,
+							"header": {
+								"text": "ID",
+								"name": "Object1"
+							},
+							"footer": {
+								"name": "10"
+							}
+						},
+						{
+							"header": {
+								"name": "Header2",
+								"text": "Invalidate"
+							},
+							"name": "Column2",
+							"footer": {
+								"name": "Footer2"
+							},
+							"width": 120,
+							"dataSource": "Choose:C955(This:C1470.student_vector_dirty; \"Need to recompute\"; \"\")",
+							"dataSourceTypeHint": "text",
+							"textAlign": "center",
+							"wordwrap": "normal"
+						},
+						{
+							"name": "firstName1",
+							"dataSource": "This:C1470.firstName",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "First Name",
+								"name": "11"
+							},
+							"footer": {
+								"name": "12"
+							}
+						},
+						{
+							"name": "lastName1",
+							"dataSource": "This:C1470.lastName",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "Last Name",
+								"name": "13"
+							},
+							"footer": {
+								"name": "14"
+							}
+						},
+						{
+							"header": {
+								"name": "Header3",
+								"text": "Program"
+							},
+							"name": "Column3",
+							"dataSource": "This:C1470.program",
+							"footer": {
+								"name": "Footer3"
+							}
+						}
+					]
+				},
+				"Input": {
+					"type": "input",
+					"left": 840,
+					"top": 298,
+					"width": 300,
+					"height": 17,
+					"right": 1140,
+					"dataSource": "Form:C1466.currentStudent.firstName"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Firstname",
+					"top": 298,
+					"left": 750,
+					"width": 81,
+					"height": 16
+				},
+				"Input1": {
+					"type": "input",
+					"left": 840,
+					"top": 334,
+					"width": 300,
+					"height": 17,
+					"right": 1140,
+					"dataSource": "Form:C1466.currentStudent.lastName"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Lastname",
+					"top": 334,
+					"left": 750,
+					"width": 81,
+					"height": 16
+				},
+				"Input2": {
+					"type": "input",
+					"left": 840,
+					"top": 370,
+					"width": 300,
+					"height": 17,
+					"right": 1140,
+					"dataSource": "Form:C1466.currentStudent.program"
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Program",
+					"top": 370,
+					"left": 750,
+					"width": 81,
+					"height": 16
+				},
+				"Input3": {
+					"type": "input",
+					"left": 840,
+					"top": 406,
+					"width": 300,
+					"height": 193,
+					"right": 1140,
+					"dataSource": "Form:C1466.currentStudent.bio"
+				},
+				"Text4": {
+					"type": "text",
+					"text": "Biography",
+					"top": 406,
+					"left": 750,
+					"width": 81,
+					"height": 16
+				},
+				"Button": {
+					"type": "button",
+					"text": "Save",
+					"top": 619,
+					"left": 1062,
+					"width": 78,
+					"height": 25,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm"
+				}
+			}
+		},
+		{
+			"objects": {
+				"textInfo_search1": {
+					"type": "input",
+					"top": 70,
+					"left": 60,
+					"width": 1080,
+					"height": 200,
+					"sizingX": "grow",
+					"dataSource": "Infos[5].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"class": "description"
+				},
+				"LabelSearch": {
+					"type": "text",
+					"top": 290,
+					"left": 60,
+					"width": 60,
+					"height": 16,
+					"text": "Search:"
+				},
+				"InputSearch": {
+					"type": "input",
+					"top": 290,
+					"left": 125,
+					"width": 668,
+					"height": 17,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.queryText",
+					"enterable": true,
+					"borderStyle": "system"
+				},
+				"BtnSearch": {
+					"type": "button",
+					"top": 287,
+					"left": 822,
+					"width": 140,
+					"height": 23,
+					"sizingX": "move",
+					"text": "Search",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/BtnSearch.4dm"
+				},
+				"LabelSearchResults1": {
+					"type": "text",
+					"top": 664,
+					"left": 60,
+					"width": 404,
+					"height": 16,
+					"sizingX": "grow",
+					"text": "Results:",
+					"fontWeight": "bold"
+				},
+				"TxtSearchResults1": {
+					"type": "input",
+					"top": 682,
+					"left": 60,
+					"width": 1060,
+					"height": 33,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.searchResults",
+					"enterable": false,
+					"multiline": "yes",
+					"borderStyle": "system",
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic"
+				},
+				"listboxSearch": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.students",
+					"top": 364,
+					"left": 60,
+					"width": 1080,
+					"height": 277,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "grow",
+					"headerHeight": "2em",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"rowHeight": "2em",
+					"verticalAlign": "middle",
+					"metaSource": "Decorate",
+					"columns": [
+						{
+							"header": {
+								"name": "Header1",
+								"text": "Invalidate"
+							},
+							"name": "Column1",
+							"footer": {
+								"name": "Footer1"
+							},
+							"width": 60,
+							"dataSource": "Choose:C955(This:C1470.student_vector_dirty; \"X\"; \"\")",
+							"dataSourceTypeHint": "text",
+							"textAlign": "center"
+						},
+						{
+							"name": "ID",
+							"dataSource": "This:C1470.ID",
+							"width": 60,
+							"enterable": false,
+							"header": {
+								"text": "ID",
+								"name": "Object"
+							},
+							"footer": {
+								"name": "1"
+							}
+						},
+						{
+							"name": "firstName",
+							"dataSource": "This:C1470.firstName",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "First Name",
+								"name": "2"
+							},
+							"footer": {
+								"name": "3"
+							}
+						},
+						{
+							"name": "lastName",
+							"dataSource": "This:C1470.lastName",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "Last Name",
+								"name": "4"
+							},
+							"footer": {
+								"name": "5"
+							}
+						},
+						{
+							"name": "program",
+							"dataSource": "This:C1470.program",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "Program",
+								"name": "6"
+							},
+							"footer": {
+								"name": "7"
+							}
+						},
+						{
+							"name": "bio",
+							"dataSource": "This:C1470.bio",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "Bio",
+								"name": "8"
+							},
+							"footer": {
+								"name": "9"
+							},
+							"wordwrap": "normal"
+						}
+					]
+				},
+				"Check Box1": {
+					"type": "checkbox",
+					"text": "Include invalidate vectors",
+					"top": 320,
+					"left": 60,
+					"width": 200,
+					"height": 21,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.includeInvalidateVectors"
+				},
+				"BtnClear": {
+					"type": "button",
+					"top": 287,
+					"left": 1000,
+					"width": 140,
+					"height": 23,
+					"sizingX": "move",
+					"text": "Clear search",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/BtnClear.4dm"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"geometryStamp": 451
+}

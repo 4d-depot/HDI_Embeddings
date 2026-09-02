@@ -1,0 +1,26 @@
+
+
+
+/* Mode Light */
+@media (prefers-color-scheme: light) {
+	.textFileBackground {
+		fill: #FAFAFA;
+		stroke: #333333;
+	}
+
+	.splitter {
+		stroke: #CCCCCC;
+	}	
+}
+
+/* Mode Dark */ 
+@media (prefers-color-scheme: dark) {
+	.textFileBackground{
+		fill: #2A2A2A;
+		stroke: #E0E0E0;
+	}
+	
+	.splitter {
+		stroke: #555555;
+	}
+}

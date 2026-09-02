@@ -1,0 +1,102 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Stepper": {
+					"type": "stepper",
+					"left": 157,
+					"top": 131,
+					"width": 48,
+					"height": 60,
+					"max": 100,
+					"events": [
+						"onDataChange"
+					],
+					"borderStyle": "solid"
+				},
+				"Spinner": {
+					"type": "spinner",
+					"left": 132,
+					"top": 227,
+					"width": 52,
+					"height": 40,
+					"borderStyle": "solid"
+				},
+				"WriteProArea": {
+					"type": "write",
+					"left": 242,
+					"top": 184,
+					"width": 234,
+					"height": 211,
+					"events": [
+						"onDataChange",
+						"onSelectionChange",
+						"onAfterEdit"
+					],
+					"layoutMode": "embedded",
+					"showHorizontalRuler": false,
+					"borderStyle": "solid"
+				},
+				"Input": {
+					"type": "input",
+					"left": 175,
+					"top": 45,
+					"width": 96,
+					"height": 17
+				},
+				"Popup Dropdown List": {
+					"type": "dropdown",
+					"left": 366,
+					"top": 54,
+					"width": 223,
+					"height": 38,
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 15,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
