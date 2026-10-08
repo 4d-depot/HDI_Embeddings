@@ -43,14 +43,11 @@
 			<field_extra class_id="4D.Vector"/>
 		</field>
 		<field name="student_vector_dirty" uuid="E3B2BA14883D41F2B32AD6C88644BB86" type="1" never_null="true" id="7"/>
-		<field name="Field_8" uuid="0566FFB0BF074E4889D846DE1E9CC726" type="21" blob_switch_size="2147483647" never_null="true" id="8">
-			<field_extra class_id="4D.Vector"/>
-		</field>
 		<primary_key field_name="ID" field_uuid="B2C3D4E5F6A748B9C0D1E2F3A4B5C6D7"/>
 		<table_extra input_form="Input" output_form="Output">
 			<editor_table_info displayable_fields_count="8">
 				<color red="255" green="255" blue="255" alpha="0"/>
-				<coordinates left="200" top="0" width="243.46484375" height="221.375"/>
+				<coordinates left="200" top="0" width="223.48828125" height="212.47265625"/>
 			</editor_table_info>
 		</table_extra>
 	</table>

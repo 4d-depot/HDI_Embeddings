@@ -1,0 +1,11 @@
+{
+	"definitions": [
+		{
+			"dataclassName": "Students",
+			"vectorName": "student_vector",
+			"modelAlias": "Embed",
+			"phrase": "Student {firstName} {lastName}, studying {program}. {bio}",
+			"autoInvalidate": true
+		}
+	]
+}

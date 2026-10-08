@@ -1,4 +1,5 @@
-var $cr : Text:=Char:C90(Carriage return:K15:38)
+ARRAY TEXT:C222($components; 0)
+var $n : Integer
 
 Case of 
 		
@@ -26,20 +27,16 @@ Case of
 		Form:C1466.allStudents:=ds:C1482.Students.all()
 		Form:C1466.students:=ds:C1482.Students.all()
 		
-		Form:C1466.configText2:="<span><span style=\"font-weight:bold\">2. Configure the vector</span>"
-		Form:C1466.configText2+="<br/>Once the field exists, you configure it by defining its phrase (the text sent to the model) and its model alias. Open the Embedding Studio from the Design menu and configure the vector, as shown below."
-		Form:C1466.configText2+="<br/>The current embedding definition for the `student_vector` vector is:</span>"
-		
-		Form:C1466.forceRecompute:=False:C215
 		Form:C1466.generateResults:=""
 		Form:C1466.queryText:=""
 		Form:C1466.searchResults:=""
-		Form:C1466.includeInvalidateVectors:=True:C214
-		
+		Form:C1466.includeDirtyVectors:=True:C214
+		Form:C1466.threshold:=0.5  // depends on the model: e.g. 0.5 with OpenAI, 0.2 with Ollama embeddinggemma
 		
 	: (Form event code:C388=On Page Change:K2:54)
 		
-		If (FORM Get current page:C276=4)
+		// Page 5 (Update Records): reload students so dirty flags reflect the latest Generate
+		If (FORM Get current page:C276=5)
 			Form:C1466.allStudents:=ds:C1482.Students.all()
 		End if 
 		

@@ -1,8 +1,10 @@
-var $cr : Text:=Char:C90(Carriage return:K15:38)
 var $settings : cs:C1710.EmbeddingStudio.Settings
 var $definition : cs:C1710.EmbeddingStudio.Definition
-var $process : cs:C1710.EmbeddingStudio.Playground
+var $playground : cs:C1710.EmbeddingStudio.Playground
 var $result : cs:C1710.EmbeddingStudio.EmbedderResult
+var $query : Text
+
+Form:C1466.searchResults:=""
 
 If (Form:C1466.queryText="")
 	ALERT:C41("Please enter a search query.")
@@ -20,19 +22,29 @@ If ($definition=Null:C1517)
 	return 
 End if 
 
-$process:=cs:C1710.EmbeddingStudio.Playground.new()
-$result:=$process.embed(Form:C1466.queryText; $definition)
+// Embed the query text with the same model as the stored vectors
+// (the embedder throws on API errors, e.g. provider unreachable or invalid key)
+$playground:=cs:C1710.EmbeddingStudio.Playground.new()
+Try
+	$result:=$playground.embed(Form:C1466.queryText; $definition)
+Catch
+	Form:C1466.searchResults:="Error: "+Last errors:C1799[0].message
+	return 
+End try
+
 If ($result.vector=Null:C1517)
-	Form:C1466.searchResults:="Error"
+	Form:C1466.searchResults:="Error: no vector returned for the query."
 	return 
 End if 
 
-If (Form:C1466.includeInvalidateVectors=True:C214)
-	Form:C1466.students:=ds:C1482.Students.query("student_vector >= :1 order by student_vector desc"; {vector: $result.vector; threshold: 0.2})
-Else 
-	Form:C1466.students:=ds:C1482.Students.query("student_vector > :1 and (student_vector_dirty=null or student_vector_dirty=0)"; {vector: $result.vector; threshold: 0.2})
+// Similarity query: keep students above the threshold, best match first
+$query:="student_vector > :1"
+If (Not:C34(Form:C1466.includeDirtyVectors))
+	$query+=" and student_vector_dirty = false"
 End if 
+$query+=" order by student_vector desc"
 
+Form:C1466.students:=ds:C1482.Students.query($query; {vector: $result.vector; threshold: Form:C1466.threshold})
 
 If (Form:C1466.students.length=0)
 	Form:C1466.searchResults:="No result"

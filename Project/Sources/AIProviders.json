@@ -1,13 +1,13 @@
 {
 	"providers": {
 		"Provider": {
-			"baseURL": "http://localhost:11434/v1/"
+			"baseURL": "https://api.openai.com/v1/"
 		}
 	},
 	"models": {
 		"Embed": {
 			"provider": "Provider",
-			"model": "embeddinggemma:latest"
+			"model": "text-embedding-3-large"
 		}
 	}
 }

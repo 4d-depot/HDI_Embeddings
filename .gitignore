@@ -28,7 +28,8 @@ Logs/
 # Ignore settings & preferences
 #--------------------------------
 userPreferences.*/
-Settings/
+Settings/*
+!Settings/embeddings.json
 #!buildApp.4DSettings
 
 #--------------------------------
