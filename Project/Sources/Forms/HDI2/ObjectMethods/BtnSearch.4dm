@@ -1,6 +1,6 @@
 var $settings : cs:C1710.EmbeddingStudio.Settings
 var $definition : cs:C1710.EmbeddingStudio.Definition
-var $playground : cs:C1710.EmbeddingStudio.Playground
+var $embedPrompt : cs:C1710.EmbeddingStudio.StudioEmbedder
 var $result : cs:C1710.EmbeddingStudio.EmbedderResult
 var $query : Text
 
@@ -24,9 +24,9 @@ End if
 
 // Embed the query text with the same model as the stored vectors
 // (the embedder throws on API errors, e.g. provider unreachable or invalid key)
-$playground:=cs:C1710.EmbeddingStudio.Playground.new()
+$embedPrompt:=cs:C1710.EmbeddingStudio.StudioEmbedder.new()
 Try
-	$result:=$playground.embed(Form:C1466.queryText; $definition)
+	$result:=$embedPrompt.embed(Form:C1466.queryText; $definition)
 Catch
 	Form:C1466.searchResults:="Error: "+Last errors:C1799[0].message
 	return 

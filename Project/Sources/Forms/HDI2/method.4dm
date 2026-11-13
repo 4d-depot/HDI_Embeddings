@@ -31,13 +31,17 @@ Case of
 		Form:C1466.queryText:=""
 		Form:C1466.searchResults:=""
 		Form:C1466.includeDirtyVectors:=True:C214
-		Form:C1466.threshold:=0.5  // depends on the model: e.g. 0.5 with OpenAI, 0.2 with Ollama embeddinggemma
+		Form:C1466.threshold:=0.5  // depends on the model
 		
 	: (Form event code:C388=On Page Change:K2:54)
 		
 		// Page 5 (Update Records): reload students so dirty flags reflect the latest Generate
 		If (FORM Get current page:C276=5)
 			Form:C1466.allStudents:=ds:C1482.Students.all()
+		End if 
+		If (FORM Get current page:C276=6)
+			Form:C1466.students:=ds:C1482.Students.all()
+			Form:C1466.queryText:=""
 		End if 
 		
 	: (Form event code:C388=On Close Box:K2:21)

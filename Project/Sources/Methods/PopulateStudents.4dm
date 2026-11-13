@@ -2,6 +2,9 @@
 // Method: PopulateStudents
 // Description: Creates sample student records if the Students table is empty
 
+//ds.Students.all().drop()
+//SET DATABASE PARAMETER([Students]; Table sequence number; 0)
+
 If (ds:C1482.Students.all().length=0)
 	
 	var $data : Collection:=[\

@@ -7,5 +7,12 @@
 			"phrase": "Student {firstName} {lastName}, studying {program}. {bio}",
 			"autoInvalidate": true
 		}
-	]
+	],
+	"scheduler": {
+		"mode": "never",
+		"intervalHours": 3,
+		"startFrom": "reference",
+		"startReference": "2026-11-03T08:28:53",
+		"dailyTime": "00:00"
+	}
 }
